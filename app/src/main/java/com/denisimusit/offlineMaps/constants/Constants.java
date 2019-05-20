@@ -2,7 +2,7 @@ package com.denisimusit.offlineMaps.constants;
 
 public class Constants {
 
-    public static final String API_HOST = "http://download.osmand.net/download.php";
+    public static final String API_HOST = "http://download.osmand.net/";
 
     public static final String ORDER_INFO = "order_info";
     public static final String ORDER_TYPE = "order_type";
