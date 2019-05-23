@@ -1,4 +1,4 @@
-package com.denisimusit.offlineMaps.ui.activities;
+package com.denisimusit.offlineMaps;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -6,10 +6,11 @@ import android.os.Bundle;
 import com.denisimusit.offlineMaps.R;
 import com.denisimusit.offlineMaps.di.component.DaggerApplicationComponent;
 import com.denisimusit.offlineMaps.interactor.DataStore;
+import com.denisimusit.offlineMaps.ui.base.BaseActivity;
 
 import javax.inject.Inject;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     @Inject
     DataStore dataStore;
@@ -17,13 +18,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
-
-        DaggerApplicationComponent.builder()
-                .context(this)
-                .build()
-                .inject(this);
 
         dataStore.downloadMap("Denmark_europe_2.obf.zip");
     }

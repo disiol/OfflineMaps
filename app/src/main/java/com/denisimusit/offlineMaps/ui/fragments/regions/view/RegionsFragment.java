@@ -30,4 +30,8 @@ public class RegionsFragment extends BaseBindingFragment<RegionsPresenter, Fragm
     public void showError(Throwable throwable) {
 
     }
+
+//TODO    После тапа на загрузку появляется индикатор загрузки у скачиваемого элемента.
+// - После того как карта загрузилась, иконка слева окрашивается в зеленый цвет.
+
 }

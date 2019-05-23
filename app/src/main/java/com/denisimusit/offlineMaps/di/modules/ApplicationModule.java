@@ -1,7 +1,7 @@
 package com.denisimusit.offlineMaps.di.modules;
 
 import com.denisimusit.offlineMaps.di.scopes.ActivityScope;
-import com.denisimusit.offlineMaps.ui.activities.MainActivity;
+import com.denisimusit.offlineMaps.MainActivity;
 
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
