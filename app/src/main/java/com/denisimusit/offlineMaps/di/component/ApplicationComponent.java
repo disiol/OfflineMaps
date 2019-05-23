@@ -2,9 +2,9 @@ package com.denisimusit.offlineMaps.di.component;
 
 import android.content.Context;
 
+import com.denisimusit.offlineMaps.MainActivity;
 import com.denisimusit.offlineMaps.OfflineMapsApplication;
 import com.denisimusit.offlineMaps.di.modules.ApplicationModule;
-import com.denisimusit.offlineMaps.MainActivity;
 
 import javax.inject.Singleton;
 
@@ -23,5 +23,4 @@ public interface ApplicationComponent {
     }
 
     void inject(OfflineMapsApplication app);
-    void inject(MainActivity app);
 }

@@ -12,6 +12,11 @@ public class RegionsFragment extends BaseBindingFragment<RegionsPresenter, Fragm
     }
 
     @Override
+    public void startDownloadMap() {
+
+    }
+
+    @Override
     public void showProgress() {
 
     }

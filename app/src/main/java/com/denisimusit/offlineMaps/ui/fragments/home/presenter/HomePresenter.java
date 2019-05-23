@@ -6,7 +6,9 @@ import com.denisimusit.offlineMaps.ui.fragments.home.view.HomeView;
 
 import javax.inject.Inject;
 
-public class HomePresenter extends BasePresenter<HomeView> {
+import static com.denisimusit.offlineMaps.util.StringsUtill.firstUpperCase;
+
+public class HomePresenter extends BasePresenter<HomeView>{
 
 //  TODO  1. Начальный экран, необходимые элементы:
 //            - Список регионов Европы
@@ -23,4 +25,13 @@ public class HomePresenter extends BasePresenter<HomeView> {
     }
 
 
+
+
+    public void downloadMap(String mapName) {
+        getView().showProgress();
+        String firstUpperCase = firstUpperCase(mapName);
+        String fileMapName = String.format("%s_2.obf.zip", firstUpperCase);
+        dataStore.downloadMap(fileMapName);
+        getView().hideProgress();
+    }
 }
