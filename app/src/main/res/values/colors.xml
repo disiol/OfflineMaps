@@ -3,4 +3,6 @@
     <color name="colorOrange">#ff8800</color>
     <color name="colorOrangeDark">#e68200</color>
     <color name="colorGray">#eaeaea</color>
+    <color name="textColor">#212121</color>
+    <color name="backgroundColorCell">#ffffff</color>
 </resources>

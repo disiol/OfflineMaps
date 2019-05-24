@@ -6,9 +6,22 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <fragment
-        android:id="@+id/fragment"
-        android:name="com.denisimusit.offlineMaps.ui.fragments.home.view.HomeFragment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <fragment
+                android:id="@+id/fragment"
+                android:name="com.denisimusit.offlineMaps.ui.fragments.home.view.HomeFragment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </ScrollView>
+
 </android.support.constraint.ConstraintLayout>
