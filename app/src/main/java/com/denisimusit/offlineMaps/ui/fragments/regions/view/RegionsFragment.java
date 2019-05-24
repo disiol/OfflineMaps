@@ -8,7 +8,7 @@ import com.denisimusit.offlineMaps.ui.fragments.regions.presenter.RegionsPresent
 public class RegionsFragment extends BaseBindingFragment<RegionsPresenter, FragmentHomeBinding> implements HomeView {
     @Override
     public int getLayoutResId() {
-        return R.layout.fragment_home;
+        return R.layout.fragment_regions;
     }
 
     @Override
