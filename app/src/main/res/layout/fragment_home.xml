@@ -66,6 +66,7 @@
             app:layout_constraintGuide_begin="143dp" />
 
         <android.support.v7.widget.RecyclerView
+            android:id="@+id/RecyclerView"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_width="395dp"
             android:layout_height="603dp"

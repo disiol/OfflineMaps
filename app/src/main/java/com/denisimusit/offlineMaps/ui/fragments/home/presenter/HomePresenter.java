@@ -1,5 +1,7 @@
 package com.denisimusit.offlineMaps.ui.fragments.home.presenter;
 
+import android.widget.TextView;
+
 import com.denisimusit.offlineMaps.interactor.DataStore;
 import com.denisimusit.offlineMaps.ui.base.BasePresenter;
 import com.denisimusit.offlineMaps.ui.fragments.home.view.HomeView;
@@ -25,12 +27,20 @@ public class HomePresenter extends BasePresenter<HomeView>{
     }
 
 
+    public void getFreeSpace(TextView freeSpaceTextView) {
+        //TODO  https://developer.android.com/reference/android/app/ActivityManager.MemoryInfo.html#totalMem
 
+    }
+
+    public void getNameMaps(String mapName) {
+        getView().showProgress();
+        getView().hideProgress();
+    }
 
     public void downloadMap(String mapName) {
         getView().showProgress();
         String firstUpperCase = firstUpperCase(mapName);
-        String fileMapName = String.format("%s_2.obf.zip", firstUpperCase);
+        String fileMapName = String.format("%s_europe_2.obf.zip", firstUpperCase);
         dataStore.downloadMap(fileMapName);
         getView().hideProgress();
     }

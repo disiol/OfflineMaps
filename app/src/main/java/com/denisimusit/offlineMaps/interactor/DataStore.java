@@ -15,7 +15,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-import static com.denisimusit.offlineMaps.constants.Constants.LOG_TEG;
+import static com.denisimusit.offlineMaps.constants.Constants.LOG_TAG;
 
 @Singleton
 public class DataStore {
@@ -36,7 +36,7 @@ public class DataStore {
 
                 if (response.isSuccessful()) {
                     try {
-                        Log.d(LOG_TEG, response.body().string());
+                        Log.d(LOG_TAG, response.body().string());
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -46,7 +46,7 @@ public class DataStore {
 
                         response.errorBody().string();
                         //TODO finish the text of an error
-                        Log.e(LOG_TEG, " errorBody: " + response.errorBody().string());
+                        Log.e(LOG_TAG, " errorBody: " + response.errorBody().string());
 
 
                     } catch (IOException e) {

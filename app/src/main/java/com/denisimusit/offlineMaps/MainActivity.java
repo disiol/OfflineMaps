@@ -1,10 +1,7 @@
 package com.denisimusit.offlineMaps;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.denisimusit.offlineMaps.R;
-import com.denisimusit.offlineMaps.di.component.DaggerApplicationComponent;
 import com.denisimusit.offlineMaps.interactor.DataStore;
 import com.denisimusit.offlineMaps.ui.base.BaseActivity;
 
