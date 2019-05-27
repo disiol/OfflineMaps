@@ -1,4 +1,4 @@
-package com.denisimusit.offlineMaps.ui.holders;
+package com.denisimusit.offlineMaps.ui.holdersAndAdapters;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import com.denisimusit.offlineMaps.R;
 import com.denisimusit.offlineMaps.modell.MapModel;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class MapAdapter extends RecyclerView.Adapter<MapHolder> {

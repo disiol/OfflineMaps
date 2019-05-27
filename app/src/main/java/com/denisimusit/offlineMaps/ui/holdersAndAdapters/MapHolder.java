@@ -1,4 +1,4 @@
-package com.denisimusit.offlineMaps.ui.holders;
+package com.denisimusit.offlineMaps.ui.holdersAndAdapters;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;

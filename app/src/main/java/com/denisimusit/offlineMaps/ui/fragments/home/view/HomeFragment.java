@@ -12,7 +12,7 @@ import com.denisimusit.offlineMaps.databinding.FragmentHomeBinding;
 import com.denisimusit.offlineMaps.modell.MapModel;
 import com.denisimusit.offlineMaps.ui.base.BaseBindingToolbarFragment;
 import com.denisimusit.offlineMaps.ui.fragments.home.presenter.HomePresenter;
-import com.denisimusit.offlineMaps.ui.holders.MapAdapter;
+import com.denisimusit.offlineMaps.ui.holdersAndAdapters.MapAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,7 +43,7 @@ public class HomeFragment extends BaseBindingToolbarFragment<HomePresenter, Frag
         getNameMaps();
 
         //Привяжем его к элементу
-        rvMain = getActivity().findViewById(R.id.home_RecyclerView);
+        rvMain = view.findViewById(R.id.home_RecyclerView);
         //Создадим адаптер
         mapAdapter = new MapAdapter(regionsList);
         //Применим наш адаптер к RecyclerView
@@ -54,7 +54,7 @@ public class HomeFragment extends BaseBindingToolbarFragment<HomePresenter, Frag
 
         presenter.getFreeSpace(binding.freeSpaceTextView);
 //        getNameMaps();
-        startDownloadMap();
+//        startDownloadMap();
     }
 
     @Override
