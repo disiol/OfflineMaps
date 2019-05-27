@@ -90,7 +90,7 @@ public class HomeFragment extends BaseBindingToolbarFragment<HomePresenter, Frag
         MapModel france = new MapModel("france", "yes");
         regionsList.add(france);
 
-        MapModel paysDeLaLoire = new MapModel("pays-de-la-loire", null);
+        MapModel paysDeLaLoire = new MapModel("pays-de-la-loire");
         regionsList.add(paysDeLaLoire);
 
         return regionsList;

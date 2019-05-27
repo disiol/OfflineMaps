@@ -9,6 +9,11 @@ public class MapModel {
         this.joinMapFiles = joinMapFiles;
     }
 
+    public MapModel(String name) {
+        this.name = name;
+
+    }
+
     public String getName() {
         return name;
     }

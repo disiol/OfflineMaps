@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="@dimen/heightCell"
     android:background="@color/backgroundColorCell"
-    android:layout_margin="8dp">
+    >
 
     <ImageView
         android:id="@+id/map_imageView"
@@ -36,7 +36,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/ic_action_import"
         tools:layout_editor_absoluteY="16dp"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        android:visibility="invisible"/>
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline3"

@@ -13,7 +13,7 @@ public class MapHolder extends RecyclerView.ViewHolder {
     public ImageView mapImageView;
     public TextView nameTextView;
     public ImageView downloadImageView;
-    public ProgressBar downloadProgressBar;
+    public ProgressBar downloadProgressBar;//TODO показывать прогрес при загрузке
     
     //объявляем конструктор
     public MapHolder(View itemView){
@@ -23,5 +23,6 @@ public class MapHolder extends RecyclerView.ViewHolder {
         nameTextView = itemView.findViewById(R.id.name_textView);
         downloadImageView = itemView.findViewById(R.id.download_imageView);
         downloadProgressBar = itemView.findViewById(R.id.download_progressBar);
+
     }
 }

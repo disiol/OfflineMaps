@@ -10,6 +10,8 @@ import com.denisimusit.offlineMaps.modell.MapModel;
 
 import java.util.List;
 
+import static com.denisimusit.offlineMaps.util.StringsUtill.firstUpperCase;
+
 public class MapAdapter extends RecyclerView.Adapter<MapHolder> {
     //Здесь мы будем хранить набор наших данных
     private List<MapModel> persons;
@@ -25,7 +27,12 @@ public class MapAdapter extends RecyclerView.Adapter<MapHolder> {
         //Получаем элемент набора данных для заполнения
         MapModel mapModel = persons.get(i);
         //Заполняем поля viewHolder'а данными из элемента набора данных
-        mapHolder.nameTextView.setText(mapModel.getName());
+        String name = firstUpperCase(mapModel.getName());
+        mapHolder.nameTextView.setText(name);
+
+        if (persons.get(i).getJoinMapFiles() == null) {
+            mapHolder.downloadImageView.setVisibility(View.VISIBLE);
+        }
     }
 
     //Этот метод вызывается при создании нового ViewHolder'а
