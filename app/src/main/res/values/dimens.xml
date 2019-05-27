@@ -2,4 +2,5 @@
 <resources>
     <dimen name="heightCell">52dp</dimen>
     <dimen name="textSize">16sp</dimen>
+    <dimen name="title_text_size">25sp</dimen>
 </resources>

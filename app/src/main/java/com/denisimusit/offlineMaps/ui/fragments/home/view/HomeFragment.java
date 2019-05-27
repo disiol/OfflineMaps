@@ -10,6 +10,7 @@ import android.view.View;
 import com.denisimusit.offlineMaps.R;
 import com.denisimusit.offlineMaps.databinding.FragmentHomeBinding;
 import com.denisimusit.offlineMaps.modell.MapModel;
+import com.denisimusit.offlineMaps.ui.base.BaseBindingFragment;
 import com.denisimusit.offlineMaps.ui.base.BaseBindingToolbarFragment;
 import com.denisimusit.offlineMaps.ui.fragments.home.presenter.HomePresenter;
 import com.denisimusit.offlineMaps.ui.holdersAndAdapters.MapAdapter;
@@ -17,7 +18,7 @@ import com.denisimusit.offlineMaps.ui.holdersAndAdapters.MapAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HomeFragment extends BaseBindingToolbarFragment<HomePresenter, FragmentHomeBinding> implements HomeView {
+public class HomeFragment extends BaseBindingFragment<HomePresenter, FragmentHomeBinding> implements HomeView {
 
     private List<MapModel> regionsList = new ArrayList<>();
     //Объявим RecyclerView
@@ -26,10 +27,7 @@ public class HomeFragment extends BaseBindingToolbarFragment<HomePresenter, Frag
     MapAdapter mapAdapter;
 
 
-    @Override
-    public String getTitle() {
-        return getString(R.string.home_fragment_title);
-    }
+
 
     @Override
     public int getLayoutResId() {

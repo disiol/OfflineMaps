@@ -12,6 +12,16 @@
         <!-- - Список регионов Европы-->
         <!-- - Информации о доступном свободном месте на устройстве.-->
         <!-- - Вложенная структура. Большая часть стран разбиты на регионы.-->
+        <TextView
+            android:id="@+id/home_fragment_title_textView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/heightCell"
+            android:background="@color/colorOrange"
+            android:gravity="left|center"
+            android:text="@string/home_fragment_title"
+            android:textColor="@color/backgroundColorCell"
+            android:textSize="@dimen/title_text_size"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/device_memory_textView"
@@ -24,7 +34,8 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintHorizontal_weight="1"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/home_fragment_title_textView"
+            app:layout_constraintTop_toTopOf="@+id/guideline" />
 
         <TextView
             android:id="@+id/free_space_textView"
@@ -35,6 +46,7 @@
             android:textColor="@color/textColor"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintTop_toBottomOf="@+id/home_fragment_title_textView"
             tools:ignore="MissingConstraints" />
 
         <android.support.constraint.Guideline
@@ -50,9 +62,14 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/heightCell"
             android:background="@color/backgroundColorCell"
+            android:indeterminate="false"
+            android:max="100"
+            android:progress="20"
+            android:theme="@style/MemoryUseProgress"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/guideline" />
+            app:layout_constraintTop_toBottomOf="@+id/free_space_textView" />
 
         <android.support.constraint.Guideline
             android:id="@+id/guideline2"
@@ -70,8 +87,10 @@
             android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/memory_use_ProgressBar"
+            app:layout_constraintVertical_bias="0.0"
             tools:ignore="MissingConstraints" />
 
 

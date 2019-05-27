@@ -7,4 +7,8 @@
 
     </style>
 
+    <style name="MemoryUseProgress" parent="Theme.AppCompat.Light">
+        <item name="colorPrimary">@color/colorOrange</item>
+    </style>
+
 </resources>
