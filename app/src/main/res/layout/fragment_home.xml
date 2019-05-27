@@ -15,28 +15,26 @@
 
         <TextView
             android:id="@+id/device_memory_textView"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="@dimen/heightCell"
-            android:layout_marginEnd="8dp"
             android:background="@color/backgroundColorCell"
             android:text="@string/device_memory_textView"
             android:textColor="@color/textColor"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/free_space_textView"
             app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_weight="1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/free_space_textView"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="@dimen/heightCell"
-            android:layout_marginEnd="8dp"
             android:background="@color/backgroundColorCell"
             android:text="@string/free_space_textView"
             android:textColor="@color/textColor"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-
+            app:layout_constraintHorizontal_weight="1"
             tools:ignore="MissingConstraints" />
 
         <android.support.constraint.Guideline
