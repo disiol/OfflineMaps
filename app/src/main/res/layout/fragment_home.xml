@@ -6,6 +6,7 @@
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_margin="1dp"
         android:background="@color/colorGray">
 
         <!--TODO 1. Начальный экран, необходимые элементы:-->
@@ -28,6 +29,7 @@
             android:layout_width="0dp"
             android:layout_height="@dimen/heightCell"
             android:background="@color/backgroundColorCell"
+            android:gravity="left|center"
             android:text="@string/device_memory_textView"
             android:textColor="@color/textColor"
             app:layout_constraintEnd_toStartOf="@+id/free_space_textView"
@@ -42,6 +44,7 @@
             android:layout_width="0dp"
             android:layout_height="@dimen/heightCell"
             android:background="@color/backgroundColorCell"
+            android:gravity="left|center"
             android:text="@string/free_space_textView"
             android:textColor="@color/textColor"
             app:layout_constraintEnd_toEndOf="parent"
