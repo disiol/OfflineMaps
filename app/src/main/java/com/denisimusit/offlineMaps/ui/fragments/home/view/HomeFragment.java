@@ -3,26 +3,27 @@ package com.denisimusit.offlineMaps.ui.fragments.home.view;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.text.TextUtils;
-import android.util.Log;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.Toast;
 
 import com.denisimusit.offlineMaps.R;
 import com.denisimusit.offlineMaps.databinding.FragmentHomeBinding;
+import com.denisimusit.offlineMaps.modell.MapModel;
 import com.denisimusit.offlineMaps.ui.base.BaseBindingToolbarFragment;
 import com.denisimusit.offlineMaps.ui.fragments.home.presenter.HomePresenter;
-
-import org.xmlpull.v1.XmlPullParser;
+import com.denisimusit.offlineMaps.ui.holders.MapAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.denisimusit.offlineMaps.constants.Constants.LOG_TAG;
-
 public class HomeFragment extends BaseBindingToolbarFragment<HomePresenter, FragmentHomeBinding> implements HomeView {
 
-    private List regionsList = new ArrayList();
+    private List<MapModel> regionsList = new ArrayList<>();
+    //Объявим RecyclerView
+    RecyclerView rvMain;
+    //И его адаптер
+    MapAdapter mapAdapter;
 
 
     @Override
@@ -39,6 +40,16 @@ public class HomeFragment extends BaseBindingToolbarFragment<HomePresenter, Frag
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        getNameMaps();
+
+        //Привяжем его к элементу
+        rvMain = getActivity().findViewById(R.id.home_RecyclerView);
+        //Создадим адаптер
+        mapAdapter = new MapAdapter(regionsList);
+        //Применим наш адаптер к RecyclerView
+        rvMain.setAdapter(mapAdapter);
+        //И установим LayoutManager
+        rvMain.setLayoutManager(new LinearLayoutManager(getActivity()));
 
 
         presenter.getFreeSpace(binding.freeSpaceTextView);
@@ -71,61 +82,18 @@ public class HomeFragment extends BaseBindingToolbarFragment<HomePresenter, Frag
 
     }
 
-    public List getNameMaps() {
-        String tmp = "";
+    public List<MapModel> getNameMaps() {
+        MapModel denmark = new MapModel("denmark", "yes");
+        regionsList.add(denmark);
+        MapModel germany = new MapModel("germany", "yes");
+        regionsList.add(germany);
+        MapModel france = new MapModel("france", "yes");
+        regionsList.add(france);
 
-        try {
-            XmlPullParser pullParser = getResources().getXml(R.xml.regions);
+        MapModel paysDeLaLoire = new MapModel("pays-de-la-loire", null);
+        regionsList.add(paysDeLaLoire);
 
-            while (pullParser.getEventType() != XmlPullParser.END_DOCUMENT) {
-                switch (pullParser.getEventType()) {
-                    // начало документа
-                    case XmlPullParser.START_DOCUMENT:
-                        Log.d(LOG_TAG, "START_DOCUMENT");
-                        break;
-                    // начало тэга
-                    case XmlPullParser.START_TAG:
-                        Log.d(LOG_TAG, "START_TAG: name = " + pullParser.getName()
-                                + ", depth = " + pullParser.getDepth() + ", attrCount = "
-                                + pullParser.getAttributeCount());
-                        tmp = "";
-                        for (int i = 0; i < pullParser.getAttributeCount(); i++) {
-                            tmp = tmp + pullParser.getAttributeName(i) + " = "
-                                    + pullParser.getAttributeValue(i) + ", ";
-                        }
-                        if (!TextUtils.isEmpty(tmp))
-                            Log.d(LOG_TAG, "Attributes: " + tmp);
-                        break;
-                    // конец тэга
-                    case XmlPullParser.END_TAG:
-                        Log.d(LOG_TAG, "END_TAG: name = " + pullParser.getName());
-                        break;
-                    // содержимое тэга
-                    case XmlPullParser.TEXT:
-                        Log.d(LOG_TAG, "text = " + pullParser.getText());
-                        break;
-
-                    default:
-                        break;
-                }
-                // следующий элемент
-                pullParser.next();
-            }
-            Log.d(LOG_TAG, "END_DOCUMENT");
-
-            return regionsList;
-        } catch (Throwable t) {
-
-            Log.e(LOG_TAG, "Ошибка при загрузке XML-документа: " + t.toString());
-            Toast.makeText(getActivity(),
-                    "Ошибка при загрузке XML-документа: " + t.toString() + " "+
-                            t.getCause() + " "+
-                            t.getMessage(), Toast.LENGTH_LONG)
-                    .show();
-
-            t.printStackTrace();
-        }
-        return null;
+        return regionsList;
     }
 
 

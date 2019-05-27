@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 import com.denisimusit.offlineMaps.R;
 
-public class MapViewHolder extends RecyclerView.ViewHolder {
+public class MapHolder extends RecyclerView.ViewHolder {
     //объявим поля, созданные в файле интерфейса itemView.xml
     public ImageView mapImageView;
     public TextView nameTextView;
@@ -16,7 +16,7 @@ public class MapViewHolder extends RecyclerView.ViewHolder {
     public ProgressBar downloadProgressBar;
     
     //объявляем конструктор
-    public MapViewHolder(View itemView){
+    public MapHolder(View itemView){
         super(itemView);
         //привязываем элементы к полям
         mapImageView = itemView.findViewById(R.id.map_imageView);
